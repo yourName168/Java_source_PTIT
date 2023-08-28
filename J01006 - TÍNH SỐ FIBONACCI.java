@@ -1,0 +1,24 @@
+package coding;
+
+import static java.lang.Math.sqrt;
+import java.util.Scanner;
+
+public class coding {
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            long[] A = new long[93];
+            A[0] = 0;
+            A[1] = 1;
+            for (int i = 2; i < 93; i++) {
+                A[i] = A[i - 1] + A[i - 2];
+            }
+            int t = scanner.nextInt();
+            while (t > 0) {
+                int n = scanner.nextInt();
+                System.out.println(A[n] + "\n");
+                t--;
+            }
+        } // Chiều cao của tam giác cân
+    }
+}
